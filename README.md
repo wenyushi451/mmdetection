@@ -1,5 +1,30 @@
 # MMDetection
 
+**How to use**
+
+Train a model
+``` bash
+python tools/test.py confirain.py configs/pascal_voc/faster_rcnn_r50_fpn_1x_csot.py
+```
+Test a model
+``` bash
+python tools/test.py <CONFIG_FILE> <CHECKPOINT_FILE> --show
+```
+or save prediction image to a work directory.
+``` bash
+python tools/test.py configs/pascal_voc/faster_rcnn_r50_fpn_1x_csot.py work_dirs/faster_rcnn_r50_fpn_1x_csot/epoch_4.pth --show-dir work_dirs/
+```
+
+Analysis Training Loss
+``` bash
+python tools/analyze_logs.py plot_curve work_dirs/faster_rcnn_r50_fpn_1x_csot/20200520_120434.log.json --keys loss_cls loss_bbox --out losses.pdf
+```
+
+Get Model Complexity
+``` bash
+python tools/get_flops.py configs/pascal_voc/faster_rcnn_r50_fpn_1x_csot.py --shape 1000 600
+```
+
 **News**: We released the technical report on [ArXiv](https://arxiv.org/abs/1906.07155).
 
 Documentation: https://mmdetection.readthedocs.io/
