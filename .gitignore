@@ -121,4 +121,6 @@ work_dirs/
 *.sh~
 
 
-data/
+data/VOCdevkit/CSOT/JPEGImages/*
+data/VOCdevkit/CSOT/Annotations/*
+data/VOCdevkit/CSOT/ImageSets/Main/*
